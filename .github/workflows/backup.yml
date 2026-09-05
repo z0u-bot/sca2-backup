@@ -92,15 +92,19 @@ jobs:
         run: python backup.py --state state/last-run.json
 
       - name: Record the run
-        # Always, so a failed leg leaves its error in the record — and so every run is
-        # repository activity, which keeps a public repo's schedule from being disabled.
-        # `-A state/` rather than the files: a run that fails before `backup.py` writes them
-        # (a credential problem, say) would otherwise die here on an unmatched pathspec,
-        # adding a spurious second red step that buries the real error.
         if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A state/
           git commit -q -m "backup $(date -u +%F)" || exit 0
-          git push origin HEAD
+          # A queued dispatch checks out the sha it was dispatched at, so a run that
+          # follows another is committing on a stale parent. Rebase onto whatever
+          # landed meanwhile; `-X theirs` keeps this run's record, the newer of the two.
+          attempt=0
+          until git push origin "HEAD:$GITHUB_REF_NAME"; do
+            attempt=$((attempt + 1))
+            if [ "$attempt" -gt 3 ]; then exit 1; fi
+            git fetch origin "$GITHUB_REF_NAME"
+            git rebase -X theirs FETCH_HEAD
+          done
