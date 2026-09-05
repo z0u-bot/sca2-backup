@@ -1,0 +1,106 @@
+# Nightly backup of a mi-ni project: its GitHub repo, its Hugging Face CAS bucket, and
+# its publish repo. Copied, with the rest of `templates/backup/`, into the backup repo;
+# the `backup` skill in the template is the runbook.
+#
+# This workflow runs in the *backup* repo, from a trust domain the project's day-to-day
+# tokens never reach. `backup.py` (this repo's own copy; nothing is run from the sources)
+# writes to three targets: a mirror repo on GitHub (the code), a backup dataset on the Hub
+# (publish-repo history and store refs), and a backup bucket (the store's files, kept
+# for a retention window after the source drops them). It never forces, and never deletes
+# anything the source still has.
+#
+# Credentials. The Hub targets are written with tokens minted per run from each target's
+# trusted publisher (Settings → Trusted Publishers on the Hub, trusting this repo, branch,
+# and workflow file): one hour long, scoped to that one target, nothing stored. Or store a
+# fine-grained token with write on both the dataset and the bucket as the HF_TOKEN secret,
+# and the mint steps are skipped. The mirror repo is pushed with MIRROR_GH_TOKEN, a
+# fine-grained token with contents and workflows write and administration read on that one
+# repo (the job's own token may not write workflow files, and the source's commits contain
+# them). Private sources need read-only tokens from the account that owns them, as the
+# SOURCE_HF_TOKEN and SOURCE_GH_TOKEN secrets; public sources need neither.
+name: Backup
+
+on:
+  schedule:
+    - cron: "17 3 * * *"  # nightly, off the hour
+  workflow_dispatch:
+
+# One run at a time, and a queued run waits rather than cancelling: a cancelled copy
+# mid-batch wastes only time, but two runs replaying pub/ at once would race on the marker.
+concurrency:
+  group: backup
+  cancel-in-progress: false
+
+permissions:
+  contents: write  # to commit state/ back to this repo
+  id-token: write  # to prove this job's identity to the Hub when minting the write tokens
+
+env:
+  SOURCE_REPO: z0u/sca2
+  SOURCE_BUCKET: z0u/sca2-store
+  SOURCE_PUBLISH_REPO: z0u/sca2-pub
+  MIRROR_REPO: z0u-bot/sca2-mirror
+  BACKUP_DATASET: z0u-bot/sca2-backup
+  BACKUP_BUCKET: z0u-bot/sca2-backup-store
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    env:
+      # `secrets` can't be tested in a step's `if`, so the choice is made here.
+      STORED_WRITE_TOKEN: ${{ secrets.HF_TOKEN != '' }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          # Deliberately below the project's own floor: `backup.py` is the recovery
+          # tool, and may have to run years from now on whatever interpreter is to
+          # hand. Pinning the runner lower keeps that portability exercised — a
+          # 3.14-only construct would otherwise reach the template unnoticed.
+          python-version: "3.12"
+
+      - run: pip install "huggingface_hub[hf_xet]>=1.30"  # the trusted-publisher exchange needs a recent release
+
+      - name: Mint a write token for the backup dataset
+        if: env.STORED_WRITE_TOKEN == 'false' && env.BACKUP_DATASET != ''
+        id: mint
+        env:
+          HF_OIDC_RESOURCE: datasets/${{ env.BACKUP_DATASET }}
+        run: |
+          token="$(hf auth token)"
+          echo "::add-mask::$token"
+          echo "token=$token" >> "$GITHUB_OUTPUT"
+
+      - name: Mint a write token for the backup bucket
+        if: env.STORED_WRITE_TOKEN == 'false' && env.BACKUP_BUCKET != ''
+        id: mint_bucket
+        env:
+          HF_OIDC_RESOURCE: buckets/${{ env.BACKUP_BUCKET }}
+        run: |
+          token="$(hf auth token)"
+          echo "::add-mask::$token"
+          echo "token=$token" >> "$GITHUB_OUTPUT"
+
+      - name: Back up the code, the store bucket, and the publish repo
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN || steps.mint.outputs.token }}
+          HF_BUCKET_TOKEN: ${{ steps.mint_bucket.outputs.token }}  # empty with a stored token, which then covers both
+          MIRROR_GH_TOKEN: ${{ secrets.MIRROR_GH_TOKEN }}  # contents + workflows write, administration read, on the mirror repo
+          SOURCE_HF_TOKEN: ${{ secrets.SOURCE_HF_TOKEN }}  # read on the bucket and publish repo; unset for public sources
+          SOURCE_GH_TOKEN: ${{ secrets.SOURCE_GH_TOKEN }}  # read on the source repo; unset for a public one
+        run: python backup.py --state state/last-run.json
+
+      - name: Record the run
+        # Always, so a failed leg leaves its error in the record — and so every run is
+        # repository activity, which keeps a public repo's schedule from being disabled.
+        # `-A state/` rather than the files: a run that fails before `backup.py` writes them
+        # (a credential problem, say) would otherwise die here on an unmatched pathspec,
+        # adding a spurious second red step that buries the real error.
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A state/
+          git commit -q -m "backup $(date -u +%F)" || exit 0
+          git push origin HEAD

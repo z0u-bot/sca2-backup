@@ -1,0 +1,5 @@
+# `backup.py` is the recovery tool: it may have to run years from now, on whatever
+# interpreter is to hand, and the workflow pins the runner below the project's own
+# floor to keep that portability exercised. Pinning the target here keeps a formatter
+# run from rewriting `except (A, B):` into the bare PEP 758 form, a SyntaxError there.
+target-version = "py312"
