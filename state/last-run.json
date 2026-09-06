@@ -1,12 +1,13 @@
 {
- "ran_at": "2026-09-05T09:26:58+00:00",
+ "ran_at": "2026-09-06T03:26:02+00:00",
  "mirror": "z0u-bot/sca2-mirror",
  "backup": "z0u-bot/sca2-backup",
  "backup_bucket": "z0u-bot/sca2-backup-store",
  "dry_run": false,
  "code": {
   "source": "https://github.com/z0u/sca2.git",
-  "sha": "6a093da23c8731ac669178fff2df901b3864bdfb"
+  "sha": "44643238029ff445452bbf08af1f5f5b4b0d4b71",
+  "snapshot": "snap/2026-09-06"
  },
  "store": {
   "source": "z0u/sca2-store",
@@ -14,41 +15,6 @@
  },
  "pub": {
   "source": "z0u/sca2-pub",
-  "seen": 1232,
-  "copied": 32,
-  "commits": [
-   "01f618ca27dc6a89a65962c4b0a93563d06c29ac",
-   "2d1209b0dc1a5b48180113e11ef3578d9b5ed3d7",
-   "57c4fb015bab073632a1b4bf51cf6d53f68870d6",
-   "87ad52c248637ccf012b49407def423fa5b269d9",
-   "8d3d921751dde5a06ee84ad60b37ebce436b08c0",
-   "85a21da2d1604ef46503b829d7e039a4ed4507f2",
-   "68c7d3f1f2d6ef95bebeb8aa0923a7be5a25afc0",
-   "443b473f4c6310adab5cb246e2ec3e928083450f",
-   "59d114b617fbda72c4fe0bf67f95a498de8675c8",
-   "17d749848f8a45494071c4ef0c5c13693597a9b2",
-   "7133ef88f2604a26209b477b3bcc319198d68985",
-   "33e50b778f63822eb7d44a0fa8ba0ae80416b2a7",
-   "ede2aa816647e10956ee00081c62e49c7c8df096",
-   "aa9e332d7d94564fa71e95555aec1f78d201fce7",
-   "9aa3bff3f5e6e9a0a7d6ee85e8dec9229bc37538",
-   "67820ecf868f8ec7ef3621f7f0157502c00a9a46",
-   "0fee1eaa635ea20e82ad931802b6f241327573fc",
-   "7fed220e5de266d994dedc46a8062b015c9bcf80",
-   "649c663c9a7a23d3311f802d7a6e9dab1480a82d",
-   "c8da89e0e0652425632cfd6ac3b0d67acd02c6b9",
-   "17355c39728e7b2fab0af07c63b641098e00db66",
-   "75c25f7be829c47ce877f0b5a2a25238b17a99fd",
-   "a7e449228c795ceea33f9347c2650d95b72a3f62",
-   "68b2fdf8405c07e0c3c683a7a8113a2404cc1ca4",
-   "e15b7af4bf8b65eff68319095dcbd60808c38a44",
-   "d5dbfbc9d3917474e3ad779ce44683307a3e0d35",
-   "1745a60cec0b453efcff82f0ff653ea3b6765a12",
-   "974045ccddebbe8f7bfb687e29ee12d73732deca",
-   "b752deb653c219b5a5880063ffe38b9e9b3e3292",
-   "ead8a5bf3d3ab7200e1c969b5eb32c986aaac141",
-   "a41624f4b655bdce6f67dc7b49e1c5e38c7b5e2c",
-   "fac779a004448bc732aaac47c0fc2daf58b41e47"
-  ]
+  "seen": 1232
  }
 }
