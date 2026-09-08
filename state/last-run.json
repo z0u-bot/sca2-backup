@@ -1,13 +1,13 @@
 {
- "ran_at": "2026-09-07T03:27:53+00:00",
+ "ran_at": "2026-09-08T03:27:25+00:00",
  "mirror": "z0u-bot/sca2-mirror",
  "backup": "z0u-bot/sca2-backup",
  "backup_bucket": "z0u-bot/sca2-backup-store",
  "dry_run": false,
  "code": {
   "source": "https://github.com/z0u/sca2.git",
-  "sha": "6dc6ace98fdfdbc4dca4101ff5ff937d35025daf",
-  "snapshot": "snap/2026-09-07"
+  "sha": "15e87a6c11d3b638510351c57215f5d91c39881f",
+  "snapshot": "snap/2026-09-08"
  },
  "store": {
   "source": "z0u/sca2-store",
@@ -15,13 +15,48 @@
  },
  "pub": {
   "source": "z0u/sca2-pub",
-  "seen": 1236,
-  "copied": 4,
+  "seen": 1275,
+  "copied": 39,
   "commits": [
-   "3a6261eca9bfc3888e610dcae7bf976281270727",
-   "0aba090015952b0439dd96af49ed29794b6e7b6c",
-   "ad053b14cacc6d77ea2a9f24c64661f2ddf5bef8",
-   "c746dbd9b6c14393c5c61c33a0c9bb3106bff52c"
+   "421b71436a45ed07cc924514549b5cebd41f112e",
+   "08349fae57785ebbab3f16d58412e5e0194318f0",
+   "0b8f7ce293f25dfe1ac9b6b71cdc7340b85d8a75",
+   "a6c6f7e292613d460712fe1c3d7fbe2f887de48c",
+   "95d1a237e479c73c2964cb05caebd46af71905d7",
+   "9d4fba94cf534c8af8d0fd40504a3f5846749aef",
+   "2e59d372d7a00900825b215848acf5ea0c8b2704",
+   "166e21aa1d6a63306bd2a59e6dd1d2e697c72b46",
+   "3dac6065f0d3c058e44c9d08494ae1abc1cb04e4",
+   "fe8179fd176ac2e0efe3f2fba5c68f91040e18b8",
+   "d5a6fb0a57d53e9e2174f86eb7880defb9360833",
+   "db8d6908893c541da90c7a1fc63903fc7ec3ce64",
+   "0ee5b8d1785d310e64d747abf5b7e0d54e44bca2",
+   "c7c485e2c837eff695ea2fe7ee7265d7381481c8",
+   "1eb163c14bd0e9d67ac2b82ca1660049f35f1070",
+   "03fe2759ca824b50e66b884af6ab297acb2eee3f",
+   "46c981d7304b482b57521f049617e3239e03bac4",
+   "57485b12b82ca1df4a94799320bb9d550165099b",
+   "99b0e58143e587e4376b14ac90cccc0db091076a",
+   "33888f2d16080ff7b62b6313d48d23d3967f2c40",
+   "9f558f41354a3139d635c172980f8ce533c5ad90",
+   "4e02b21fcb899d2f5a40ccecd9077d5f439339a9",
+   "4404df03da820f85d3042ed516d6f286d3662428",
+   "d4715e3002fbaf4da0450f03097ac62863d63d53",
+   "c2e125703febc2a43c36c8cde89b373cfe627a9d",
+   "748ea55e83674c68863835c018a6c1059c7fb0b3",
+   "3086915b358c2ff5fdf189ac120c258106ceee7d",
+   "7b61a8828ea79cf09c203a2d00e9c1d98b2c59e7",
+   "66860920dfbb230ce5a4797be4e82cca8a70f02d",
+   "823bcf2d732f5f96c961aa75322de371964e70e7",
+   "d1f95c5fc66b344ccb1896e054ead6f0edf0f440",
+   "6415a177fb81b0bbf3ad4c9f2b0ae5117feabc04",
+   "a20bbac1711c5be437168dbf92a53381709173c0",
+   "598c0df0ebbc73e378578c17882dbc7500f4f9bd",
+   "27680c73091c05c24943ae8845296b32a2bac749",
+   "bda5548ee6bcdf096a41541c789d271e02235a7a",
+   "a232654f261653687debbcc3f19f1f2ef6fca0b5",
+   "7ffc3218fe41907cd41bfc78f8dc62257b13343a",
+   "49b603883c64c3e9468c1a2b1cfaef1774b1f17d"
   ]
  }
 }
