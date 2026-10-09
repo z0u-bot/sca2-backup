@@ -1,46 +1,35 @@
 {
- "ran_at": "2026-10-08T10:35:04+00:00",
+ "ran_at": "2026-10-09T10:33:42+00:00",
  "mirror": "z0u-bot/sca2-mirror",
  "backup": "z0u-bot/sca2-backup",
  "backup_bucket": "z0u-bot/sca2-backup-store",
  "dry_run": false,
  "code": {
   "source": "https://github.com/z0u/sca2.git",
-  "sha": "060d1f9e5dd3275240890da58008583d33b2555e",
-  "snapshot": "snap/2026-10-08"
+  "sha": "8f6c11154f17e455e9972c93039342f84bc77c2e",
+  "snapshot": "snap/2026-10-09"
  },
  "store": {
   "source": "z0u/sca2-store",
-  "seen": 8070,
-  "copied": 248,
-  "bytes": 249174298,
+  "seen": 8099,
+  "copied": 29,
+  "bytes": 21955598,
   "commits": [
-   "be57b33b7a050cb047da466091a8df07d4f4640b"
+   "2760b6e387443ffd85ed94e36e24d35c754c0c0b"
   ]
  },
  "pub": {
   "source": "z0u/sca2-pub",
-  "seen": 1582,
-  "copied": 18,
+  "seen": 1589,
+  "copied": 7,
   "commits": [
-   "64b7e1b9e318981568d4eb01892bee40e8bf4868",
-   "bb13c6454bcd53f236931854cff401b6892c4de3",
-   "a1c8df4b84f6160ee738673d2ca80d97e781644f",
-   "b7b7782e90cfe5e81b2da98ff15d53d299ec9bbe",
-   "294bf653f01f73aa3d8a5b1b95459f0b90c507ec",
-   "0a633328ee9dd50855c9452d69de091a83e1f420",
-   "28f0012cdde7c46bad4dc1ea6697fd51ae3ac791",
-   "ad45cb3b21a2607e6c0a1ca181fdb32857f6076f",
-   "50acf6315ee2b457974c6f3636e25707063e8cae",
-   "93a51eb05b6abbd9c3898b1b184b615f659d8d93",
-   "02c8da1f57859cfdfd209c5f6c9dea0f4af7c0fa",
-   "b2a4ce3ce96fa36bc8fa03ea67e1cbe91af35aef",
-   "3d35d4ed0c1414a50465c5f8ac359c33b888bfae",
-   "21fe4dc510db91bcc56086a1217c01da40d28425",
-   "a549bf96e0a1b8aad857545eb09323343847313c",
-   "3701f4d25a1391b96f91a7455248f59121db0ee8",
-   "26134528a844bac01bfc7ee925c09f834f44b080",
-   "b5ef6186864c4eda6882b61b194d4f7f03fa9e6d"
+   "515a216fb8b7e5dd07b4f229de2d3822350c3a90",
+   "e2d0290a347a20429cfd0b0a9d00ba643717e917",
+   "4abdeea22d12f595d65a40587f4f95f32d6a9f5b",
+   "e8cfbb433f09ba76b5e8fe5eb8cf119974831d55",
+   "58330c0490de2a1dc0e64f22ab9dc198799df461",
+   "4b6ad080c7ea7ec995679aad874ca5418c11547f",
+   "66e062be39e477b0be5ab6e8d926f9a582982c7d"
   ]
  }
 }
