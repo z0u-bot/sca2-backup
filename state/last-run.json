@@ -1,13 +1,12 @@
 {
- "ran_at": "2026-11-09T11:31:21+00:00",
+ "ran_at": "2026-11-10T11:11:58+00:00",
  "mirror": "z0u-bot/sca2-mirror",
  "backup": "z0u-bot/sca2-backup",
  "backup_bucket": "z0u-bot/sca2-backup-store",
  "dry_run": false,
  "code": {
   "source": "https://github.com/z0u/sca2.git",
-  "sha": "baddba06946b0913ff6fee33b8705de4215853dd",
-  "snapshot": "snap/2026-11-09"
+  "sha": "baddba06946b0913ff6fee33b8705de4215853dd"
  },
  "store": {
   "source": "z0u/sca2-store",
@@ -15,10 +14,6 @@
  },
  "pub": {
   "source": "z0u/sca2-pub",
-  "seen": 1719,
-  "copied": 1,
-  "commits": [
-   "1c2c30d8abe8d05b5cc3fe7c88882beecdb7067b"
-  ]
+  "seen": 1719
  }
 }
