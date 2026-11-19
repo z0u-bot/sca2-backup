@@ -1,5 +1,5 @@
 {
- "ran_at": "2026-11-18T11:41:35+00:00",
+ "ran_at": "2026-11-19T11:39:33+00:00",
  "mirror": "z0u-bot/sca2-mirror",
  "backup": "z0u-bot/sca2-backup",
  "backup_bucket": "z0u-bot/sca2-backup-store",
@@ -10,30 +10,17 @@
  },
  "store": {
   "source": "z0u/sca2-store",
-  "seen": 14896,
-  "copied": 35,
-  "bytes": 16023514,
+  "seen": 14904,
+  "copied": 9,
+  "bytes": 5321504,
   "commits": [
-   "de46bca15ae814a339fe671996e5c9ad4be84653"
+   "d268b3eb579b11ae0ee1aba02c24917de34f0ab1"
   ]
  },
  "pub": {
-  "source": "z0u/sca2-pub",
-  "seen": 1754,
-  "copied": 12,
-  "commits": [
-   "945d2e1d55165e39c0f58fbe87283b3a70b99860",
-   "cde3544f3f7188a93d77ad3a0f811b0df14b5849",
-   "4a28910bd5e433da71e3bb81d8c61118a12caecc",
-   "a2766bf0a0b674a38b5eaf0db8f212943ef3a6cf",
-   "15bc132f325007ed4091c2039d333396e7bf29ac",
-   "5595601aee8f844793a8a113d8d1e064c67423bd",
-   "8149576f82c2bb32e042f87bc67c0b3382d5e8b9",
-   "95d1b3917dd8b146bbdd8e0079b5dbfff5a1c58c",
-   "13b348b6e766cc73536fb2e1d34aa11e0f743fce",
-   "b171b1e2cb5097ca8a49d8bd06a58ba4c0ce6d3f",
-   "f3cb42a3d67724619099252e9a06f8b979895da4",
-   "32adee5dbd2b7e98230d755d6702c0a4349f2904"
-  ]
- }
+  "error": "Server error '500 Internal Server Error' for url 'https://huggingface.co/api/resolve-cache/datasets/z0u/sca2-pub/b0869efee7f156c063e8587503e45696baa2c3bd/exports%2Fm2%2Fex-2.1.10%2Findex.html?%2Fdatasets%2Fz0u%2Fsca2-pub%2Fresolve%2Fb0869efee7f156c063e8587503e45696baa2c3bd%2Fexports%2Fm2%2Fex-2.1.10%2Findex.html=&etag=%22d23cdb6ea887af7afa0295ad25da0ba4ebc01733%22' (Request ID: Root=1-6afee063-1fa465eb7319474c4c32d049;a7662ef0-8d70-42a0-b867-d77081e9bada)\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500\n\nInternal Error - We're working hard to fix this as soon as possible!"
+ },
+ "errors": [
+  "pub: Server error '500 Internal Server Error' for url 'https://huggingface.co/api/resolve-cache/datasets/z0u/sca2-pub/b0869efee7f156c063e8587503e45696baa2c3bd/exports%2Fm2%2Fex-2.1.10%2Findex.html?%2Fdatasets%2Fz0u%2Fsca2-pub%2Fresolve%2Fb0869efee7f156c063e8587503e45696baa2c3bd%2Fexports%2Fm2%2Fex-2.1.10%2Findex.html=&etag=%22d23cdb6ea887af7afa0295ad25da0ba4ebc01733%22' (Request ID: Root=1-6afee063-1fa465eb7319474c4c32d049;a7662ef0-8d70-42a0-b867-d77081e9bada)\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500\n\nInternal Error - We're working hard to fix this as soon as possible!"
+ ]
 }
