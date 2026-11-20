@@ -1,5 +1,5 @@
 {
- "ran_at": "2026-11-19T11:39:33+00:00",
+ "ran_at": "2026-11-20T11:39:40+00:00",
  "mirror": "z0u-bot/sca2-mirror",
  "backup": "z0u-bot/sca2-backup",
  "backup_bucket": "z0u-bot/sca2-backup-store",
@@ -10,17 +10,27 @@
  },
  "store": {
   "source": "z0u/sca2-store",
-  "seen": 14904,
-  "copied": 9,
-  "bytes": 5321504,
+  "seen": 14906,
+  "copied": 4,
+  "bytes": 2557503,
   "commits": [
-   "d268b3eb579b11ae0ee1aba02c24917de34f0ab1"
+   "bf0b1172ff7a674197676a8f41134ff24374d32c"
   ]
  },
  "pub": {
-  "error": "Server error '500 Internal Server Error' for url 'https://huggingface.co/api/resolve-cache/datasets/z0u/sca2-pub/b0869efee7f156c063e8587503e45696baa2c3bd/exports%2Fm2%2Fex-2.1.10%2Findex.html?%2Fdatasets%2Fz0u%2Fsca2-pub%2Fresolve%2Fb0869efee7f156c063e8587503e45696baa2c3bd%2Fexports%2Fm2%2Fex-2.1.10%2Findex.html=&etag=%22d23cdb6ea887af7afa0295ad25da0ba4ebc01733%22' (Request ID: Root=1-6afee063-1fa465eb7319474c4c32d049;a7662ef0-8d70-42a0-b867-d77081e9bada)\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500\n\nInternal Error - We're working hard to fix this as soon as possible!"
- },
- "errors": [
-  "pub: Server error '500 Internal Server Error' for url 'https://huggingface.co/api/resolve-cache/datasets/z0u/sca2-pub/b0869efee7f156c063e8587503e45696baa2c3bd/exports%2Fm2%2Fex-2.1.10%2Findex.html?%2Fdatasets%2Fz0u%2Fsca2-pub%2Fresolve%2Fb0869efee7f156c063e8587503e45696baa2c3bd%2Fexports%2Fm2%2Fex-2.1.10%2Findex.html=&etag=%22d23cdb6ea887af7afa0295ad25da0ba4ebc01733%22' (Request ID: Root=1-6afee063-1fa465eb7319474c4c32d049;a7662ef0-8d70-42a0-b867-d77081e9bada)\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500\n\nInternal Error - We're working hard to fix this as soon as possible!"
- ]
+  "source": "z0u/sca2-pub",
+  "seen": 1763,
+  "copied": 9,
+  "commits": [
+   "754c7e312e168d11ff268dff1c7c76c61ad12072",
+   "91a5c285fcb2f88f257518afd78b5d14686aa8f0",
+   "570a967baacb37ee15ff944e3e5a6f8948a9ad72",
+   "d9903ca4b04751786b4312968c2ba3196c68987a",
+   "8d5872c3665f414bb222484d800f4d6d2cf8279b",
+   "65175bea952dddb14179025a9c36678730ebe29d",
+   "7a47f08e840ce56fb5672e699b232dde00c8de1f",
+   "2f31c93e5c05e41feb487546fd7a0d9c17ab1b5f",
+   "53c1bb88f425e934cd4b991822d1937911b13994"
+  ]
+ }
 }
