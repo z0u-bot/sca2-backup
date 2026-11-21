@@ -1,5 +1,5 @@
 {
- "ran_at": "2026-11-20T11:39:40+00:00",
+ "ran_at": "2026-11-21T11:01:03+00:00",
  "mirror": "z0u-bot/sca2-mirror",
  "backup": "z0u-bot/sca2-backup",
  "backup_bucket": "z0u-bot/sca2-backup-store",
@@ -10,27 +10,10 @@
  },
  "store": {
   "source": "z0u/sca2-store",
-  "seen": 14906,
-  "copied": 4,
-  "bytes": 2557503,
-  "commits": [
-   "bf0b1172ff7a674197676a8f41134ff24374d32c"
-  ]
+  "seen": 14906
  },
  "pub": {
   "source": "z0u/sca2-pub",
-  "seen": 1763,
-  "copied": 9,
-  "commits": [
-   "754c7e312e168d11ff268dff1c7c76c61ad12072",
-   "91a5c285fcb2f88f257518afd78b5d14686aa8f0",
-   "570a967baacb37ee15ff944e3e5a6f8948a9ad72",
-   "d9903ca4b04751786b4312968c2ba3196c68987a",
-   "8d5872c3665f414bb222484d800f4d6d2cf8279b",
-   "65175bea952dddb14179025a9c36678730ebe29d",
-   "7a47f08e840ce56fb5672e699b232dde00c8de1f",
-   "2f31c93e5c05e41feb487546fd7a0d9c17ab1b5f",
-   "53c1bb88f425e934cd4b991822d1937911b13994"
-  ]
+  "seen": 1763
  }
 }
