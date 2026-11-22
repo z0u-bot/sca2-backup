@@ -1,5 +1,5 @@
 {
- "ran_at": "2026-11-21T11:01:03+00:00",
+ "ran_at": "2026-11-22T11:24:29+00:00",
  "mirror": "z0u-bot/sca2-mirror",
  "backup": "z0u-bot/sca2-backup",
  "backup_bucket": "z0u-bot/sca2-backup-store",
@@ -14,6 +14,11 @@
  },
  "pub": {
   "source": "z0u/sca2-pub",
-  "seen": 1763
+  "seen": 1765,
+  "copied": 2,
+  "commits": [
+   "ce6dd84d027a23d16fb58f16872d1f2cc6588425",
+   "95b4fdb3c878c01fd9f7be131115a091b83ee5c6"
+  ]
  }
 }
